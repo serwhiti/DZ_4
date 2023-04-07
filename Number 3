@@ -14,29 +14,23 @@ int main()
 	ifstream f("Zadacha_3.txt");
 	float n1, n2;
 	while (!f.eof()) 
-  {
+	{
 		f >> sup;
-		if (sup != "+" && sup != "-" && sup != "*" && sup != "/")
+		if (sup != "+" && sup != "-" && sup != "*" && sup != "/") {
 			s.push(stoi(sup));
+		}
 		else 
-    {
+		{
 			n2 = s.top();
 			s.pop();
 			n1 = s.top();
 			s.pop();
-			if (sup == "+") 
-        s.push(n1 + n2);
-			else 
-        if (sup == "-") 
-          s.push(n1 - n2);
-			  else
-          if (sup == "*") 
-            s.push(n1 * n2);
-			    else 
-            if (sup == "/") 
-              s.push(n1 / n2);
+			if (sup == "+") s.push(n1 + n2);
+			else if (sup == "-") s.push(n1 - n2);
+			else if (sup == "*") s.push(n1 * n2);
+			else if (sup == "/") s.push(n1 / n2);
 		}
-  }
+	}
 	while (!(s.empty()))
 	{
 		cout << s.top() << endl;
